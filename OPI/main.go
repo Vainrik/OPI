@@ -16,9 +16,9 @@ func main() {
 
 	// изменение номер один
 
-	var matrix [4][4]int
+	var matri [4][4]int
 	for i := 0; i < 4; i++ {
-		_, err := fmt.Fscan(file, &matrix[i][0], &matrix[i][1], &matrix[i][2], &matrix[i][3])
+		_, err := fmt.Fscan(file, &matri[i][0], &matri[i][1], &matri[i][2], &matri[i][3])
 		if err != nil {
 			fmt.Println("Ошибка при чтении данных из файла:", err)
 			return
@@ -27,23 +27,23 @@ func main() {
 
 	// Вывод исходной матрицы
 	fmt.Println("Исходная матрица:")
-	printMatrix(matrix)
+	printMatrix(matri)
 
 	//ffff
 	//sdfsdf
 	//fsdfsd
 	//sdgsdfsdf
 
-	matrix = swapColumns(matrix, 0, 2)
+	matri = swapColumns(matri, 0, 2)
 	fmt.Println("Перестановка столбцов 1 и 3:")
-	printMatrix(matrix)
+	printMatrix(matri)
 
-	matrix = swapRows(matrix, 1, 2)
+	matri = swapRows(matri, 1, 2)
 	fmt.Println("Перестановка строки 2 и 3:")
-	printMatrix(matrix)
+	printMatrix(matri)
 
 	// Транспонирование матрицы
-	transposed := transposeMatrix(matrix)
+	transposed := transposeMatrix(matri)
 
 	// Вывод преобразованной матрицы
 	fmt.Println("Транспонированная матрица:")
@@ -51,10 +51,10 @@ func main() {
 }
 
 // Функция для вывода матрицы в консоль
-func printMatrix(matrix [4][4]int) {
+func printMatrix(matri [4][4]int) {
 	for i := 0; i < 4; i++ {
 		for j := 0; j < 4; j++ {
-			fmt.Printf("%d ", matrix[i][j])
+			fmt.Printf("%d ", matri[i][j])
 		}
 		fmt.Println()
 	}
@@ -64,29 +64,29 @@ func printMatrix(matrix [4][4]int) {
 // sdfsdf
 // sdf
 // Функция для перестановки двух строк матрицы
-func swapRows(matrix [4][4]int, i, j int) [4][4]int {
+func swapRows(matri [4][4]int, i, j int) [4][4]int {
 	for k := 0; k < 4; k++ {
-		matrix[i][k], matrix[j][k] = matrix[j][k], matrix[i][k]
+		matri[i][k], matri[j][k] = matri[j][k], matri[i][k]
 	}
-	return matrix
+	return matri
 }
 
-func swapColumns(matrix [4][4]int, i, j int) [4][4]int {
+func swapColumns(matri [4][4]int, i, j int) [4][4]int {
 	for k := 0; k < 4; k++ {
-		matrix[k][i], matrix[k][j] = matrix[k][j], matrix[k][i]
+		matri[k][i], matri[k][j] = matri[k][j], matri[k][i]
 	}
-	return matrix
+	return matri
 }
 
 // sdf
 // fffff
 // sdfsdf
 // Функция для транспонирования матрицы
-func transposeMatrix(matrix [4][4]int) [4][4]int {
+func transposeMatrix(matri [4][4]int) [4][4]int {
 	transposed := [4][4]int{}
 	for i := 0; i < 4; i++ {
 		for j := 0; j < 4; j++ {
-			transposed[i][j] = matrix[j][i]
+			transposed[i][j] = matri[j][i]
 		}
 	}
 	return transposed
