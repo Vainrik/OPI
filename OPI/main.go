@@ -14,7 +14,8 @@ func main() {
 	}
 	defer file.Close()
 
-	// Чтение данных из файла в матрицу
+	// изменение номер один
+
 	var matrix [4][4]int
 	for i := 0; i < 4; i++ {
 		_, err := fmt.Fscan(file, &matrix[i][0], &matrix[i][1], &matrix[i][2], &matrix[i][3])
@@ -23,19 +24,16 @@ func main() {
 			return
 		}
 	}
-
+	// какие то изменения
 	// Вывод исходной матрицы
 	fmt.Println("Исходная матрица:")
 	printMatrix(matrix)
 
 	// Перестановка строк
-	matrix = swapRows(matrix, 1, 3)
-	fmt.Println("Перестановка строки 2 и 4:")
+	matrix = swapRows(matrix, 1, 2)
+	fmt.Println("Перестановка строки 2 и 3:")
 	printMatrix(matrix)
-	// Перестановка столбцов
-	matrix = swapColumns(matrix, 0, 2)
-	fmt.Println("Перестановка столбца 1 и 3:")
-	printMatrix(matrix)
+
 	// Транспонирование матрицы
 	transposed := transposeMatrix(matrix)
 
