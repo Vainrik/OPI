@@ -31,6 +31,8 @@ func main() {
 
 	//ffff
 	//sdfsdf
+	//fsdfsd
+	//sdgsdfsdf
 
 	matrix = swapColumns(matrix, 0, 2)
 	fmt.Println("Перестановка столбцов 1 и 3:")
