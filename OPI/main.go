@@ -24,12 +24,19 @@ func main() {
 			return
 		}
 	}
-	// какие то изменения
+
 	// Вывод исходной матрицы
 	fmt.Println("Исходная матрица:")
 	printMatrix(matrix)
+	//sdfsdf
+	// sdfsd
+	//ffff
+	//sdfsdf
+	//sdfsd
+	matrix = swapColumns(matrix, 0, 2)
+	fmt.Println("Перестановка столбцов 1 и 3:")
+	printMatrix(matrix)
 
-	// Перестановка строк
 	matrix = swapRows(matrix, 1, 2)
 	fmt.Println("Перестановка строки 2 и 3:")
 	printMatrix(matrix)
@@ -52,6 +59,9 @@ func printMatrix(matrix [4][4]int) {
 	}
 }
 
+// sdfsdf
+// sdfsdf
+// sdf
 // Функция для перестановки двух строк матрицы
 func swapRows(matrix [4][4]int, i, j int) [4][4]int {
 	for k := 0; k < 4; k++ {
@@ -60,7 +70,6 @@ func swapRows(matrix [4][4]int, i, j int) [4][4]int {
 	return matrix
 }
 
-// Функция для перестановки двух столбцов матрицы
 func swapColumns(matrix [4][4]int, i, j int) [4][4]int {
 	for k := 0; k < 4; k++ {
 		matrix[k][i], matrix[k][j] = matrix[k][j], matrix[k][i]
@@ -68,6 +77,9 @@ func swapColumns(matrix [4][4]int, i, j int) [4][4]int {
 	return matrix
 }
 
+// sdf
+// fffff
+// sdfsdf
 // Функция для транспонирования матрицы
 func transposeMatrix(matrix [4][4]int) [4][4]int {
 	transposed := [4][4]int{}
