@@ -28,11 +28,10 @@ func main() {
 	// Вывод исходной матрицы
 	fmt.Println("Исходная матрица:")
 	printMatrix(matrix)
-	//sdfsdf
-	// sdfsd
+
 	//ffff
 	//sdfsdf
-	//sdfsd
+
 	matrix = swapColumns(matrix, 0, 2)
 	fmt.Println("Перестановка столбцов 1 и 3:")
 	printMatrix(matrix)
